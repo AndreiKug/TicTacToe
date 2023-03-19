@@ -11,7 +11,7 @@ gameBoard.addEventListener('click', function(event){
 
     if (targetCell.classList.contains("cell")) {
         checkAndPrintXO(targetCell);
-        endingGame();
+        setTimeout(endingGame, 100);
     }    
     
 });
@@ -39,12 +39,12 @@ function endingGame() {
     for (let i = 0; i < divArr.length; i += 3) {
     if (divArr[i].innerText === divArr[i+1].innerText && divArr[i+1].innerText === divArr[i+2].innerText) {
       if (divArr[i].innerText === "X") {
-        alert("Выиграли Х");
+        alert("Выиграли Х");       
         window.location.reload();
         return;
       } else if (divArr[i].innerText === "O") {
-        alert("Выиграли О");
-        //window.location.reload();
+        alert("Выиграли О");        
+        window.location.reload();
         return;
       }
     }
